@@ -34,7 +34,9 @@ const Dialog = () => {
     });
     try {
       await axios.patch(
-        `https://review-tracker-backend.onrender/${id}`,
+        `https://review-tracker-backend.onrender.com
+
+/user/${id}`,
         data,
         {
           headers: {

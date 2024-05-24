@@ -9,7 +9,7 @@ const Others = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://review-tracker-backend.onrender/",
+        "https://review-tracker-backend.onrender.com/user/",
         {
           headers: {
             Authorization: "id",
@@ -28,9 +28,10 @@ const Others = () => {
       </div>
       {/* others */}
       <div className="flex flex-col w-full gap-[1rem]">
-        {userData.map(({ Location, username, role, Phone, Email }) => (
+        {userData.map(({ Location, username, role, Phone, Email }, index) => (
           <>
             <div
+              key={`${index}-${Phone}`}
               className="p-[1.25rem] shadow-[#B0B0B0] flex  bg-[#FCFCFC]  rounded-[0.625rem] w-full gap-[1.25rem] max-lg:flex-col"
               data-aos="fade-up"
             >

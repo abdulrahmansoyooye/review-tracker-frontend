@@ -21,7 +21,7 @@ const SignIn = () => {
     });
     try {
       var response = await axios.post(
-        "https://review-tracker-backend.onrender/auth/login",
+        "https://review-tracker-backend.onrender.com/user/auth/login",
         data
       );
 

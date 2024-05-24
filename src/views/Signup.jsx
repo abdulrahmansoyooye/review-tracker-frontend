@@ -20,7 +20,7 @@ const Signup = () => {
 
     try {
       const response = await axios.post(
-        "https://review-tracker-backend.onrender.com/auth/register",
+        "https://review-tracker-backend.onrender.com/user/auth/register",
         data
       );
       if (response.status === 201) {
