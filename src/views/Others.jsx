@@ -8,11 +8,14 @@ const Others = () => {
   const [userData, setUserData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3001/user/", {
-        headers: {
-          Authorization: "id",
-        },
-      });
+      const response = await axios.get(
+        "https://review-tracker-backend.onrender.comuser/",
+        {
+          headers: {
+            Authorization: "id",
+          },
+        }
+      );
       setUserData(response.data);
     };
     fetchData();

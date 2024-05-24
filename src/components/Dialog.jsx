@@ -33,11 +33,15 @@ const Dialog = () => {
       picturePath: "",
     });
     try {
-      await axios.patch(`http://localhost:3001/user/${id}`, data, {
-        headers: {
-          Authorization: id,
-        },
-      });
+      await axios.patch(
+        `https://review-tracker-backend.onrender.comuser/${id}`,
+        data,
+        {
+          headers: {
+            Authorization: id,
+          },
+        }
+      );
       navigate("/");
       setDialogDisplay(!dialogDisplay);
     } catch (error) {
