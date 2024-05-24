@@ -21,7 +21,6 @@ const Dialog = () => {
   });
   const [errorMessage, seterrorMessage] = useState(false);
   const navigate = useNavigate();
-  // const [file, setFile] = useState("");
   const { TechStack } = data;
   const submitData = async () => {
     setData({
@@ -34,9 +33,7 @@ const Dialog = () => {
     });
     try {
       await axios.patch(
-        `https://review-tracker-backend.onrender.com
-
-/user/${id}`,
+        `https://review-tracker-backend.onrender.com/user/${id}`,
         data,
         {
           headers: {
@@ -48,7 +45,7 @@ const Dialog = () => {
       setDialogDisplay(!dialogDisplay);
     } catch (error) {
       console.log(error);
-      seterrorMessage(error.message);
+      seterrorMessage({ message: error.response.data, code: error.code });
     }
   };
   const handleChange = (e) => {
@@ -66,9 +63,9 @@ const Dialog = () => {
         Enter Your Details
       </h1>
       {errorMessage && (
-        <div className="text-slate-100 text-center bg-red-600 p-[1rem] rounded-[1rem]">
-          {errorMessage.code}
-          {errorMessage.message}
+        <div className="text-slate-100 text-center bg-red-600 p-[1rem] rounded-[1rem] flex flex-col">
+          <div className="font-[600]"> {errorMessage.code}</div>
+          <div>{errorMessage.message}</div>
         </div>
       )}
       <div className="grid grid-cols-2 max-md:grid-cols-1  gap-[2.5rem] ">

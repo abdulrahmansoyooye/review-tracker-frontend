@@ -28,7 +28,7 @@ const Signup = () => {
       }
     } catch (error) {
       console.log(error);
-      seterrorMessage({ message: error.message, code: error.code });
+      seterrorMessage({ message: error.response.data, code: error.code });
     }
   };
   const navigate = useNavigate();
@@ -45,9 +45,9 @@ const Signup = () => {
               Welcome back! Please enter your details.
             </p>
             {errorMessage && (
-              <div className="text-slate-100 text-center bg-red-600 p-[1rem] rounded-[1rem]">
-                {errorMessage.code}
-                {errorMessage.message}
+              <div className="text-slate-100 text-center bg-red-600 p-[1rem] rounded-[1rem] flex flex-col">
+                <div className="font-[600]"> {errorMessage.code}</div>
+                <div>{errorMessage.message}</div>
               </div>
             )}
           </div>

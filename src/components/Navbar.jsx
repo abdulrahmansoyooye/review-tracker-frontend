@@ -39,22 +39,14 @@ const Navbar = ({ navShown, setnavShown }) => {
         />
       </div>
       {/* Profile */}
-      <img
+
+      <div
         src={notification}
         alt="notification"
-        className="w-[1.5rem] h-[1.5rem] md:hidden  cursor-pointer"
+        className="cursor-pointer "
         onClick={() => setDialogDisplay(!dialogDisplay)}
-      />
-      <div className="flex gap-[1.25rem] max-md:hidden items-center">
-        <img
-          src={notification}
-          alt="notification"
-          className="w-[1.5rem] h-[1.5rem] cursor-pointer"
-          onClick={() => setDialogDisplay(!dialogDisplay)}
-        />
-        <div className="flex  flex-col">
-          <p>Abdulrahman Soyooye</p>
-        </div>
+      >
+        Edit Profile
       </div>
     </div>
   );
