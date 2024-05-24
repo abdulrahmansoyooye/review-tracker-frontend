@@ -9,7 +9,7 @@ const Others = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get(
-        "https://review-tracker-backend.onrender.comuser/",
+        "https://review-tracker-backend.onrender/",
         {
           headers: {
             Authorization: "id",
